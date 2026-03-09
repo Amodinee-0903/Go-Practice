@@ -49,6 +49,17 @@ func main() {
 	fmt.Println("Before Swap a:", a, "b:", b)
 	swap(&a, &b)
 	fmt.Println("After Swap a:", a, "b:", b)
+
+	s1 := Student{
+		name:  "Amodinee",
+		marks: 90,
+	}
+	s2 := Student{
+		name:  "Rahul",
+		marks: 34,
+	}
+	s1.checkmarks()
+	s2.checkmarks()
 }
 
 /* Write a Go program that:1)Prints numbers 1 to 10 2)Prints only even numbers from 1 to 20
@@ -157,4 +168,17 @@ func swap(a *int, b *int) {
 	temp := *a
 	*a = *b
 	*b = temp
+}
+
+type Student struct {
+	name  string
+	marks int
+}
+
+func (s Student) checkmarks() {
+	if s.marks >= 40 {
+		fmt.Println(s.name, "is passed")
+	} else {
+		fmt.Println(s.name, "is failed")
+	}
 }
