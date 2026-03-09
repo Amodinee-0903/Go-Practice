@@ -35,11 +35,16 @@ func main() {
 	} else {
 		fmt.Println("Minor")
 	}
+
+	a := 10
+	fmt.Println("Initial value:", a)
+	changenum(&a)
+	fmt.Println("New value:", a)
 	//printloops()
 	//arrayPractice()
 	//slicePractice()
 	//mapPractice()
-	prinit()
+	//prinit()
 }
 
 /* Write a Go program that:1)Prints numbers 1 to 10 2)Prints only even numbers from 1 to 20
@@ -126,3 +131,12 @@ func prinit() {
 	fmt.Println("Add:", result1)
 	fmt.Println("Multiply:", result2)
 }
+
+//1. Write a function that increases a number by 1 using a pointer.
+//Call the function and show that the original number changes.
+
+func changenum(ptr *int) {
+	(*ptr)++
+}
+
+//main changenum(&a)
