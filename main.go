@@ -36,15 +36,19 @@ func main() {
 		fmt.Println("Minor")
 	}
 
-	a := 10
-	fmt.Println("Initial value:", a)
-	changenum(&a)
-	fmt.Println("New value:", a)
+	// a := 10
+	// fmt.Println("Initial value:", a)
+	// changenum(&a)
+	// fmt.Println("New value:", a)
 	//printloops()
 	//arrayPractice()
 	//slicePractice()
 	//mapPractice()
 	//prinit()
+	a, b := 5, 10
+	fmt.Println("Before Swap a:", a, "b:", b)
+	swap(&a, &b)
+	fmt.Println("After Swap a:", a, "b:", b)
 }
 
 /* Write a Go program that:1)Prints numbers 1 to 10 2)Prints only even numbers from 1 to 20
@@ -139,4 +143,18 @@ func changenum(ptr *int) {
 	(*ptr)++
 }
 
-//main changenum(&a)
+/* Write a function that swaps two numbers using pointers.
+Requirements:Create two variables in main
+Print their values before swapping
+Call a function that swaps them using pointers
+Print their values after swapping
+Expected behavior example:
+Before swap
+5 10
+After swap
+10 5 */
+func swap(a *int, b *int) {
+	temp := *a
+	*a = *b
+	*b = temp
+}
