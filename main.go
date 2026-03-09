@@ -35,7 +35,9 @@ func main() {
 	} else {
 		fmt.Println("Minor")
 	}
-	printloops()
+	//printloops()
+	//arrayPractice()
+	slicePractice()
 }
 
 /* Write a Go program that:1)Prints numbers 1 to 10 2)Prints only even numbers from 1 to 20
@@ -64,4 +66,27 @@ func printloops() {
 	}
 
 	fmt.Println("Sum is:", sum)
+}
+
+func arrayPractice() {
+	a := [5]int{10, 20, 30, 40, 50}
+	fmt.Println(a)
+
+	sum := 0
+	for _, v := range a {
+		sum = sum + v
+	}
+	fmt.Println("Sum is:", sum)
+}
+
+func slicePractice() {
+	a := []int{10, 20, 30}
+	a = append(a, 40)
+	a = append(a, 50)
+
+	for _, v := range a {
+		fmt.Println(v)
+	}
+	fmt.Println("Length:", len(a))
+	fmt.Println("Capacity", cap(a))
 }
