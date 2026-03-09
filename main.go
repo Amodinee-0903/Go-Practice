@@ -38,7 +38,8 @@ func main() {
 	//printloops()
 	//arrayPractice()
 	//slicePractice()
-	mapPractice()
+	//mapPractice()
+	prinit()
 }
 
 /* Write a Go program that:1)Prints numbers 1 to 10 2)Prints only even numbers from 1 to 20
@@ -108,4 +109,20 @@ func mapPractice() {
 	} else {
 		fmt.Println("Rahul not found")
 	}
+}
+
+func operate(a int, b int, op func(int, int) int) int {
+	return op(a, b)
+}
+func add(a, b int) int {
+	return a + b
+}
+func multiply(a, b int) int {
+	return a * b
+}
+func prinit() {
+	result1 := operate(3, 5, add)
+	result2 := operate(3, 5, multiply)
+	fmt.Println("Add:", result1)
+	fmt.Println("Multiply:", result2)
 }
