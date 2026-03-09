@@ -45,21 +45,24 @@ func main() {
 	//slicePractice()
 	//mapPractice()
 	//prinit()
-	a, b := 5, 10
-	fmt.Println("Before Swap a:", a, "b:", b)
-	swap(&a, &b)
-	fmt.Println("After Swap a:", a, "b:", b)
+	// a, b := 5, 10
+	// fmt.Println("Before Swap a:", a, "b:", b)
+	// swap(&a, &b)
+	// fmt.Println("After Swap a:", a, "b:", b)
 
-	s1 := Student{
-		name:  "Amodinee",
-		marks: 90,
-	}
-	s2 := Student{
-		name:  "Rahul",
-		marks: 34,
-	}
-	s1.checkmarks()
-	s2.checkmarks()
+	// s1 := Student{
+	// 	name:  "Amodinee",
+	// 	marks: 90,
+	// }
+	// s2 := Student{
+	// 	name:  "Rahul",
+	// 	marks: 34,
+	// }
+	// s1.checkmarks()
+	// s2.checkmarks()
+
+	s := newStudent("Amodinee", -90)
+	s.Show()
 }
 
 /* Write a Go program that:1)Prints numbers 1 to 10 2)Prints only even numbers from 1 to 20
@@ -181,4 +184,20 @@ func (s Student) checkmarks() {
 	} else {
 		fmt.Println(s.name, "is failed")
 	}
+}
+
+func newStudent(n string, m int) *Student {
+	if m < 0 {
+		m = 0
+	}
+	s := Student{
+		name:  n,
+		marks: m,
+	}
+	return &s
+}
+
+func (s Student) Show() {
+	fmt.Println("Name:", s.name)
+	fmt.Println("Marks:", s.marks)
 }
