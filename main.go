@@ -37,7 +37,8 @@ func main() {
 	}
 	//printloops()
 	//arrayPractice()
-	slicePractice()
+	//slicePractice()
+	mapPractice()
 }
 
 /* Write a Go program that:1)Prints numbers 1 to 10 2)Prints only even numbers from 1 to 20
@@ -89,4 +90,22 @@ func slicePractice() {
 	}
 	fmt.Println("Length:", len(a))
 	fmt.Println("Capacity", cap(a))
+}
+
+func mapPractice() {
+	m := make(map[string]int)
+	m["Amodinee"] = 90
+	m["Rahul"] = 80
+	m["Neha"] = 85
+
+	for k, v := range m {
+		fmt.Println(k, v)
+	}
+
+	value, ok := m["Rahul"]
+	if ok {
+		fmt.Println("Rahul found with marks", value)
+	} else {
+		fmt.Println("Rahul not found")
+	}
 }
